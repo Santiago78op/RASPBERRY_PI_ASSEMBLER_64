@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>ASSEMBLER</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="assembler">ASSEMBLER</h1>
+<p><img src="file:///c:\Users\72358\Desktop\Ensamblador\img\erm.png" alt="alt text"></p>
+<p>To actually speak to electronic hardware, you need to send electrical signals. The easiest signals for computers to understand are on and off , and so the computer alphabet is just two letters. Just as the 26 letters of the English alphabet do not limit how much can be written, the two letters of the computer alphabet do not limit what computers can do. Th e two symbols for these two letters are the numbers 0 and 1, and we commonly think of the computer language as numbers in base 2, or binary numbers. We refer to each “letter” as a binary digit or bit. Computers are slaves to our commands, which are called instructions. Instructions, which are just
+collections of bits that the computer understands and obeys, can be thought of as numbers. For example, the bits.</p>
+<p>1000110010100000</p>
+<p>tell one computer to add two numbers. Chapter 2 explains why we use numbers
+for instructions and data; we don’t want to steal that chapter’s thunder, but using numbers for both instructions and data is a foundation of computing. The fi rst programmers communicated to computers in binary numbers, but this was so tedious that they quickly invented new notations that were closer to the way humans think. At fi rst, these notations were translated to binary by hand, but this process was still tiresome. Using the computer to help program the computer, the pioneers invented programs to translate from symbolic notation to binary. Th e fi rst of these programs was named an assembler. Th is program translates a symbolic version of an instruction into the binary version. For example, the programmer would write.</p>
+<p>add A,B</p>
+<p>and the assembler would translate this notation into</p>
+<p>1000110010100000</p>
+<p>Th is instruction tells the computer to add the two numbers A and B. Th e name coined
+for this symbolic language, still used today, is assembly language. In contrast, the
+binary language that the machine understands is the machine language.</p>
+<h1 id="procesador">PROCESADOR</h1>
+<p>Un procesador es una calculadora y para hacer esos calculos se almacenan numeros en pequeñas memorias llamadas registros</p>
+<p><em><strong>HAY DOS TIPOS DE REGISTROS:</strong></em></p>
+<ol>
+<li>Para numeros enteros</li>
+<li>Para numeros decimales</li>
+</ol>
+<p><img src="file:///c:\Users\72358\Desktop\Ensamblador\img\operand.png" alt="alt text"></p>
+<h1 id="flags">Flags</h1>
+<ol>
+<li>N Will be enabled (N == 1) if the result of the instruction yields a negative number
+and will be disabled (N == 0) otherwise.</li>
+<li>Z Will be enabled (Z == 1) if the result of the instruction yields a zero value and will
+be disabled (Z == 0) if nonzero.</li>
+<li>C Will be enabled if the result of the instruction is a value that requires a 33rd bit to
+be fully represented. For instance an addition that over
+ows the 32 bit range of
+integers. There is a special case for C and subtractions where a non-borrowing
+subtraction enables it, and it is disabled otherwise: subtracting a larger number
+from a smaller one enables C, but it will be disabled if the subtraction is done in
+the other order.</li>
+<li>V Will be enabled if the result of the instruction yields a value that cannot be repre-
+sented in 32 bit two's complement form and will be disabled otherwise.</li>
+</ol>
+<h1 id="banderas">Banderas</h1>
+<ol>
+<li>N Se habilitará (N == 1) si el resultado de la instrucción arroja un número negativo y se deshabilitará (N == 0) en caso contrario.</li>
+<li>Z Se habilitará (Z == 1) si el resultado de la instrucción arroja un valor cero y se deshabilitará (Z == 0) si es distinto de cero.</li>
+<li>C Se habilitará si el resultado de la instrucción es un valor que requiere un bit 33 para estar completamente representado. Por ejemplo, una adición que sobrepase el rango de 32 bits de
+números enteros. Hay un caso especial para C y las restas donde una resta que no es de préstamo la habilita y, en caso contrario, está deshabilitada: restar un número mayor de uno más pequeño habilita C, pero se deshabilitará si la resta se realiza en el otro orden.</li>
+<li>V Se habilitará si el resultado de la instrucción arroja un valor que no puede ser</li>
+</ol>
+<h1 id="condicionales">Condicionales</h1>
+<h2 id="and">AND</h2>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+<th>x and y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="or">OR</h2>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+<th>x and y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bic">BIC</h2>
+<p>La operación bic realiza una operación AND bit a bit entre el primer registro y el complemento del segundo registro. En otras palabras, realiza una operación AND entre el primer registro y la negación del segundo registro.</p>
+<p>Si representamos los valores en los registros x0 y x3 como A y B respectivamente, la operación bic se puede representar como A AND NOT B.</p>
+<p>Aquí está el desglose paso a paso de la operación bic x4, x0, x3 en tu código:</p>
+<p>Entrada: Los valores iniciales en los registros son x0 = 0b10010110 y x3 = 0b10000100.
+Negación: Primero, calculamos el complemento (negación) de x3. El complemento de un número binario se obtiene invirtiendo todos sus bits (cambiando los 1s por 0s y viceversa). Entonces, el complemento de x3 es NOT 0b10000100 = 0b01111011.
+Operación AND: Luego, realizamos una operación AND bit a bit entre x0 y el complemento de x3. La operación AND devuelve 1 si ambos bits son 1, y 0 en caso contrario. Entonces, x0 AND NOT x3 = 0b10010110 AND 0b01111011 = 0b00010010.
+Resultado: Finalmente, almacenamos el resultado en x4. Por lo tanto, después de la operación bic, x4 = 0b00010010.</p>
+<h2 id="eor">EOR</h2>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+<th>x and y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="not">NOT</h2>
+<p>La instrucción lsl #48 en el código es una operación de desplazamiento lógico a la izquierda (Logical Shift Left) por 48 bits.</p>
+<p>En la instrucción movn x3, #0x8000, lsl #48, el valor inmediato 0x8000 se desplaza a la izquierda por 48 bits antes de calcular el complemento para la operación movn.</p>
+<p>Esto se hace generalmente para mover un valor a una posición específica en un registro de 64 bits. En este caso, el valor 0x8000 se está moviendo a las posiciones de bit más altas del registro x3</p>
+<h2 id="branching">BRANCHING</h2>
+<p>Until now our small assembler programs execute one instruction after the other. If our
+ARM processor were only able to run this way it would be of limited use. It could not
+react to existing conditions which may require diferent sequences of instructions. That
+is the purpose of the branch instructions.</p>
+<h2 id="unconditional-branches">Unconditional branches</h2>
+<p>You can tell the processor to branch unconditionally by using the instruction b (for
+Branch) and a label. Consider the following program.</p>
+<pre><code class="language-s">/* -- branch01.s */
+.text
+.global main
+main:
+    mov r0, #2 @ r0 &lt;- 2
+    b end @ branch to 'end'
+    mov r0, #3 @ r0 &lt;- 3
+end:
+    bx lr
+</code></pre>
+<p>If you execute this program you will see that it returns an error code of 2.</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">.</mi><mi mathvariant="normal">/</mi><mi>b</mi><mi>r</mi><mi>a</mi><mi>n</mi><mi>c</mi><mi>h</mi><mn>01</mn><mo separator="true">;</mo><mi>e</mi><mi>c</mi><mi>h</mi><mi>o</mi></mrow><annotation encoding="application/x-tex"> ./branch01 ; echo </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">./</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">an</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord">01</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">ec</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span></span></span></span>?
+2</p>
+<p>What happened is that instruction b end branched (modifying the pc register) to the
+instruction at the label end, which is bx lr, the instruction we execute at the end of
+our program. This way the instruction mov r0, #3 was not actually executed at all
+(the processor jumped over that instruction).</p>
+<p>At this point the unconditional branch instruction b may look a bit useless but that is not the case. In fact this instruction is essential in some contexts; in particular, when linked with conditional branching. But before we can talk about conditional branching
+we need to talk about conditions.</p>
+<h2 id="conditional-branches">conditional branches</h2>
+<p>If our processor were only able to branch when we put the unconditional branch b in
+our program, it would not be very useful. It is much more useful to branch when some
+condition is met. So a processor should be able to evaluate some sort of conditions.</p>
+<p>If our processor were only able to branch when we put the unconditional branch b in
+our program, it would not be very useful. It is much more useful to branch when some
+condition is met. So a processor should be able to evaluate some sort of conditions.</p>
+<p>Before continuing, we need to unveil another register called the cpsr (for Current Pro-
+gram Status Register). This register is a bit special and directly modifying it is out of
+the scope of this chapter. That said, it keeps some values that can be read and updated
+when executing an instruction. The contents of that register include four condition code
+bits, called  ags, named N (Negative), Z (Zero), C (Carry) and V (oVer
+ow).</p>
+<p><img src="file:///c:\Users\72358\Desktop\Ensamblador\img\branching.png" alt="alt text"></p>
+<h2 id="conditional-strcture">Conditional Strcture</h2>
+<p>They are really powerful tools because they allow us to express control structures. Structured programming is an important milestone in better computing engineering so being able to map all
+the usual structured programming constructs in assembler, in our processor.</p>
+<h2 id="if-then-else">If, then, else</h2>
+<p>This is one of the most basic control structures. In fact, we already used this structure
+in the previous chapter. Consider the following structure, where E is an expression and
+S1 and S2 are statements (they may be compound statements like f SA; SB; SC; g).</p>
+<p>if (E) then
+S1
+else
+S2</p>
+<p>A possible way to express this in ARM assembler could be the following</p>
+<p>if_eval:
+/* Assembler that evaluates E and updates the cpsr accordingly <em>/
+bXX else_part /</em> Here XX is the appropriate condition <em>/
+then_part:
+/</em> assembler code for S1, the &quot;then&quot; part <em>/
+b end_of_if
+else_part:
+/</em> assembler code for S2, the &quot;else&quot; part */
+end_of_if:</p>
+<p>If there is no else part statement, we can replace bXX else part with bYY end of if
+and omit the b end of if and the next two lines.</p>
+<h2 id="loops">Loops</h2>
+<p>This is another basic control structure in structured programming. While there are
+several types of loops, actually all can be reduced to the following structure.</p>
+<p>while (E)
+S</p>
+<p>Supposedly S executes some instructions so than E eventually becomes false and the
+loop is left. Otherwise we would stay in the loop forever (sometimes this is what you
+want but not in our examples). A way to implement these loops is as follows.</p>
+<p>while_condition:
+/* assembler code to evaluate E and update cpsr <em>/
+bXX end_of_loop /</em> If E is false, leave the loop right now <em>/
+/</em> assembler code for the statement S <em>/
+b while_condition /</em> Unconditional branch to the beginning */
+end_of_loop:</p>
+<p>A common loop involves iterating over a single range of integers, as in</p>
+<p>for (i = L; i &lt; N; i += K)
+S
+But this is nothing but
+i = L;
+while (i &lt; N)
+{
+S;
+i += K;
+}</p>
+<p>So we do not have to learn a new way to implement the loop itself.</p>
+<h2 id="arrays-and-structures">Arrays and structures</h2>
+<p><img src="file:///c:\Users\72358\Desktop\Ensamblador\img\array.png" alt="alt text"></p>
+<p>In the previous chapter we saw that the second source operand of most arithmetic
+instructions can use a shift operator which allows us to shift and rotate bits. In this
+chapter we will learn about additional indexing modes available to ARM instructions.
+This time we will focus on load and store instructions.</p>
+<p>So far we have been able to move 32 bits from memory to registers (load) and back to
+memory (store). But working on single items of 32 bits (usually called scalars) is a bit
+limiting. Soon we would end ourselves working on arrays and structures, even if we did
+not know their names.</p>
+<p>An array is a sequence of items of the same kind in memory. Arrays are a fundamental
+data structure in almost every low level language. Every array has a base address,
+usually denoted by the name of the array. Each of its items has associated with it an
+index, usually ranging from 0 to N 􀀀1 when the array contains N items. Using the base
+address and the index we can access an item of the array. We mentioned in Chapter 3
+that memory could be viewed as an array of bytes. An array in memory is the same,
+except an item may take more than one single byte.</p>
+<p>A structure (or record or tuple) is a sequence of items of possibly diferent kinds. Each item of a structure is usually called a feld. Fields do not have an associated index
+but an ofset with respect to the beginning of the structure. Structures are laid out in
+memory in an array that ensures that the proper alignment is used in every feld. The
+base address of a structure is the address of its frst feld. If the base address is aligned,
+the structure should be laid out in a way that all the feld are properly aligned as well.</p>
+<p>What do arrays and structure have to do with indexing modes of load and store? Well,
+these indexing modes are designed to make accessing arrays and structures easier.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
